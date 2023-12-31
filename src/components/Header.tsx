@@ -22,25 +22,41 @@ export const Header = () => {
     }
   }, [scrolled])
 
+  const headerContainer = css`
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+  `
+
   const header = css`
     padding: 20px 40px;
     display: flex;
     justify-content: space-between;
-    transition: all 0.3s ease-in-out;
   `
   const headerScrolled = css`
-    box-shadow: 0 4px 2px -2px gray;
-    border-bottom: 1px solid #ccc;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.5s ease-in-out;
+
+    background-color: white;
+    box-shadow: 0 0 15px rgb(0 0 0 / 20%);
+    & > a,
+    & > div > a {
+      color: black;
+    }
   `
 
   const title = css`
+    color: white;
     font-size: 32px;
     font-weight: normal;
     text-decoration: none;
-    color: white;
     &:hover {
-      transition: all 0.2s ease-in-out;
-      opacity: 0.8;
+      opacity: 0.5;
+      transition: all 0.4s ease-in-out;
     }
   `
 
@@ -51,28 +67,30 @@ export const Header = () => {
     justify-content: space-between;
     font-size: 24px;
     & > * {
-      margin-left: 15px;
+      margin-left: 35px;
       display: flex;
       align-items: center;
       text-decoration: none;
       &:hover {
-        opacity: 0.7;
-        transition: all 0.2s ease-in-out;
+        opacity: 0.5;
+        transition: all 0.4s ease-in-out;
       }
     }
   `
 
   return (
-    <header className={scrolled ? [headerScrolled, header].join() : header}>
-      <Link href='/' className={title}>
-        Header
-      </Link>
-      <div className={nav}>
-        <Link href={'/#Mission'}>Mission</Link>
-        <Link href={'/#Services'}>Services</Link>
-        <Link href={'/#About'}>About</Link>
-        <Link href={'/#Contact'}>Contact</Link>
-      </div>
-    </header>
+    <div className={headerContainer}>
+      <header className={scrolled ? headerScrolled : header}>
+        <Link href='/' className={title}>
+          Alex
+        </Link>
+        <div className={nav}>
+          <Link href={'/#Mission'}>Mission</Link>
+          <Link href={'/#Services'}>Services</Link>
+          <Link href={'/#About'}>About</Link>
+          <Link href={'/#Contact'}>Contact</Link>
+        </div>
+      </header>
+    </div>
   )
 }
