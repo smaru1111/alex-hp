@@ -1,49 +1,65 @@
-'use client'
-
 import Image from 'next/image'
-import { useOffsetTop } from '@/hooks/useOffsetTop'
 import { css } from '@kuma-ui/core'
-import { useRef } from 'react'
+import { FadeInMotion } from './motion/FadeInMotion'
+import {
+  ContentText,
+  ContentTitle,
+  SectionSubTitle,
+  SectionTitle,
+  SectionTitleCotainer,
+  target,
+} from '@/style/section'
 
 export const Service = () => {
-  const serviceRef = useRef<HTMLDivElement>(null)
-  const { isViewportThrough, TransitionEffect } = useOffsetTop(serviceRef)
-
   return (
-    <section ref={serviceRef} className={service}>
-      <div className={before}>
-        <div></div>
-      </div>
-      <div className={ServiceContainer}>
+    <section className={Diaglonal}>
+      <div className={target} id='Service'></div>
+      <FadeInMotion className={ServiceContainer}>
         <Image
+          className={ServiceImage}
           src={'/service.png'}
           alt='background image'
           width={600}
           height={800}
           quality={100}
-          style={{ objectFit: 'cover', width: '50%', height: 'auto', maxHeight: '80vh' }}
+          style={{ objectFit: 'cover', width: '50%', height: 'auto', maxHeight: '70vh' }}
         />
         <div className={ServiceInner}>
-          {isViewportThrough ? (
-            <div className={TransitionEffect}>
-              <div className={SectionTitleCotainer}>
-                <p className={SectionTitle}>service</p>
-                <p className={SectionSubTitle}>サービス</p>
-              </div>
-              <p className={ContentTitle}>テナント事業</p>
-              <p className={ContentText}>
-                飲食店が経営したい学生と飲食店経営者がタッグを組んで画期的なメニューを考え販売するための場を提供する事業
-                <br></br>
-                もっとテキスト欲しいなもっとテキスト欲しいなもっとテキスト欲しいなもっとテキスト欲しいなもっとテキスト欲しいな
-              </p>
-            </div>
-          ) : null}
+          <div className={SectionTitleCotainer}>
+            <p className={SectionTitle}>Service</p>
+            <p className={SectionSubTitle}>サービス</p>
+          </div>
+          <p className={ContentTitle}>テナント事業</p>
+          <p className={ContentText}>
+            飲食店が経営したい学生と飲食店経営者がタッグを組んで画期的なメニューを考え販売するための場を提供する事業
+            <br></br>
+            もっとテキスト欲しいなもっとテキスト欲しいなもっとテキスト欲しいなもっとテキスト欲しいなもっとテキスト欲しいな
+          </p>
         </div>
-      </div>
+      </FadeInMotion>
     </section>
   )
 }
 
+const Diaglonal = css`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  transform: skewY(2deg);
+  background-image: url('/bg-service-sub.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -19;
+  @media (max-width: xl) {
+    height: 80vh;
+  }
+  @media (max-width: md) {
+    height: auto;
+  }
+`
 const ServiceContainer = css`
   display: flex;
   flex-direction: row;
@@ -52,84 +68,38 @@ const ServiceContainer = css`
   width: 100%;
   height: 100vh;
   margin: 0 auto;
-  padding: 20px 100px;
-  @media (max-width: lg) {
+  max-width: 1200px;
+  padding: 80px 50px;
+  @media (max-width: xl) {
     height: auto;
-    padding: 0 100px;
+    width: 90%;
+    padding: 10vh 0;
   }
-`
-
-const ContentTitle = css`
-  margin: 60px 0;
-  font-size: 2.5rem;
-  font-weight: bold;
-  line-height: 1;
-  @media (max-width: lg) {
-    font-size: 2rem;
-  }
-`
-
-const ContentText = css`
-  font-size: 1.5rem;
-  text-align: left;
-  @media (max-width: lg) {
-    font-size: 1rem;
-  }
-`
-
-const before = css`
-  ::before {
-    content: '';
-    position: absolute;
-    top: -10%;
-    left: 0;
-    width: 120%;
-    height: 100%;
-    margin: 3% -10% 0;
-    background-image: url('/bg-service.png');
-    filter: brightness(0.5);
+  & > * {
     transform: skewY(-2deg);
-    z-index: -19;
   }
 `
-
-const service = css`
-  position: relative;
-  padding: 0 0 50px 0;
+const ServiceImage = css`
+  width: 40%;
+  height: auto;
+  max-height: 60vh;
+  @media (max-width: lg) {
+    display: none;
+  }
 `
 
 const ServiceInner = css`
-  box-sizing: boder-box;
-  width: 100%;
-  height: 80vh;
-  margin: 0 auto;
-  padding: 18vh 0 6vh 100px;
-  color: #fff;
-  text-align: left;
-  @media (max-width: lg) {
-    height: auto;
-    padding: 5vh 0 5vh 50px;
-  }
-`
-const SectionTitleCotainer = css`
   display: flex;
   flex-direction: column;
-  width: fit-content;
-`
-
-const SectionTitle = css`
-  font-size: 2.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  width: 60%;
+  height: 100%;
+  color: #fff;
   text-align: left;
-  line-height: 1;
+  margin-left: 50px;
   @media (max-width: lg) {
-    font-size: 2rem;
-  }
-`
-
-const SectionSubTitle = css`
-  font-size: 1.2rem;
-  text-align: center;
-  @media (max-width: lg) {
-    font-size: 1rem;
+    margin-left: 0;
+    width: 100%;
   }
 `

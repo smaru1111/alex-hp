@@ -1,95 +1,66 @@
-'use client'
-
-import { useOffsetTop } from '@/hooks/useOffsetTop'
 import { css } from '@kuma-ui/core'
-import { useRef } from 'react'
+import { FadeInMotion } from './motion/FadeInMotion'
+import {
+  SectionTitleCotainer,
+  SectionTitle,
+  SectionSubTitle,
+  ContentTitle,
+  ContentText,
+  target,
+} from '@/style/section'
 
 export const Mission = () => {
-  const missionRef = useRef<HTMLDivElement>(null)
-  const { isViewportThrough, TransitionEffect } = useOffsetTop(missionRef)
-
   return (
-    <section ref={missionRef} className={mission}>
-      <div className={before}>
-        <div></div>
-      </div>
-      <div className={missionInner}>
-        {isViewportThrough ? (
-          <div className={TransitionEffect}>
-            <div className={SectionTitleCotainer}>
-              <p className={SectionTitle}>Mission</p>
-              <p className={SectionSubTitle}>ミッション</p>
-            </div>
-            <p className={ContentTitle}>自分たちがしたい・やりたいを実現する</p>
-            <p className={ContentText}>
-              ビジョンを実現するためには、まずAlexのメンバーが挑戦者にならなければならない。なぜなら、挑戦者の気持ちは挑戦者しかわからないし、したいことややりたいことができる環境がどういうものかっていうのはしたいことややりたいことをやっている本人しかわからないと思うから。そして、何よりもこのミッションを掲げている理由は、メンバー１人１人にAlexの活動を心の底から楽しんでほしいから。
-            </p>
-          </div>
-        ) : null}
-      </div>
+    <section className={Diaglonal}>
+      <div className={target} id='Mission'></div>
+      <FadeInMotion className={missionInner}>
+        <div className={SectionTitleCotainer}>
+          <p className={SectionTitle}>Mission</p>
+          <p className={SectionSubTitle}>ミッション</p>
+        </div>
+        <p className={ContentTitle}>自分たちがしたい・やりたいを実現する</p>
+        <p className={ContentText}>
+          ビジョンを実現するためには、まずAlexのメンバーが挑戦者にならなければならない。なぜなら、挑戦者の気持ちは挑戦者しかわからないし、したいことややりたいことができる環境がどういうものかっていうのはしたいことややりたいことをやっている本人しかわからないと思うから。そして、何よりもこのミッションを掲げている理由は、メンバー１人１人にAlexの活動を心の底から楽しんでほしいから。
+        </p>
+      </FadeInMotion>
     </section>
   )
 }
 
-const ContentTitle = css`
-  margin: 60px 0;
-  font-size: 2.5rem;
-  font-weight: bold;
-  line-height: 1;
-`
-
-const ContentText = css`
-  font-size: 1.5rem;
-  text-align: left;
-`
-
-const mission = css`
+const Diaglonal = css`
   position: relative;
-  overflow: hidden;
-`
-
-const before = css`
-  ::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 120%;
-    height: 100%;
-    margin: 3% -10% 0;
-    background: #fff;
-    transform: skewY(2deg);
-    z-index: -20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  margin-top: 70px;
+  background: #fff;
+  transform: skewY(2deg);
+  @media (max-width: xl) {
+    height: 80vh;
+  }
+  @media (max-width: md) {
+    height: auto;
   }
 `
 
 const missionInner = css`
-  box-sizing: boder-box;
-  width: 100%;
-  max-width: 1500px;
-  height: 100vh;
-  margin: 20px auto;
-  padding: 33vh 100px 20vh 100px;
-  color: #000;
-  text-align: left;
-  @media (max-width: lg) {
-    height: auto;
-    padding: 10vh 100px;
-  }
-`
-const SectionTitleCotainer = css`
   display: flex;
   flex-direction: column;
-  width: fit-content;
-`
-
-const SectionTitle = css`
-  font-size: 2.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  padding: 80px 50px;
+  color: #000;
   text-align: left;
-  line-height: 1;
-`
-
-const SectionSubTitle = css`
-  font-size: 1.2rem;
-  text-align: center;
+  @media (max-width: xl) {
+    height: auto;
+    width: 90%;
+    padding: 10vh 0;
+  }
+  & > * {
+    transform: skewY(-2deg);
+  }
 `

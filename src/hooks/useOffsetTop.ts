@@ -27,7 +27,7 @@ export function useOffsetTop(ref?: React.RefObject<HTMLElement>) {
 
     // アンマウント時にイベントリスナーを解除
     return () => window.removeEventListener('scroll', handler)
-  }, [handler])
+  }, [handler, ref])
 
   const TransitionEffect = css`
     transition: all 0.5s ease-in-out;

@@ -26,6 +26,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "**/*/*.ts",
+    "**/*/*.tsx",
     ".next/types/**/*.ts",
     "./kuma.config.ts"
   ],

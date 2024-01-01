@@ -7,6 +7,9 @@ import { Index } from '@/components/Index'
 import { Mission } from '@/components/Mission'
 import { Service } from '@/components/Service'
 import { Alex } from '@/components/Alex'
+import { About } from '@/components/About'
+import { Contact } from '@/components/Contact'
+import { Footer } from '@/components/Footer'
 export default function Home() {
   const style = css`
     /* noto sans jp */
@@ -22,6 +25,18 @@ export default function Home() {
   `
   const bgimage = css`
     object-fit: cover;
+    -webkit-animation: zoom 5s 1;
+    animation: zoom 5s 1;
+    animation-fill-mode: forwards;
+
+    @keyframes zoom {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.1);
+      }
+    }
   `
 
   const container = css`
@@ -36,6 +51,9 @@ export default function Home() {
         <Mission />
         <Service />
         <Alex />
+        <About />
+        <Contact />
+        <Footer />
       </div>
       <div className={bg}>
         <Image
