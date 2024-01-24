@@ -29,11 +29,11 @@ export const Service = () => {
             <p className={SectionTitle}>Service</p>
             <p className={SectionSubTitle}>サービス</p>
           </div>
-          <p className={ContentTitle}>テナント事業</p>
+          <p className={ContentTitle}>フリマ事業</p>
           <p className={ContentText}>
-            飲食店が経営したい学生と飲食店経営者がタッグを組んで画期的なメニューを考え販売するための場を提供する事業
-            <br></br>
-            もっとテキスト欲しいなもっとテキスト欲しいなもっとテキスト欲しいなもっとテキスト欲しいなもっとテキスト欲しいな
+            ハンドメイド、写真、絵なんでもいい。とにかく自分が好きで本気になって取り組んでいるものを交換し合う場。
+            ただ、お金を払って終わりじゃなくて、本気になっているものをシェアしてコミュニケーションしてみんなで一緒に作り上げていく場。
+            そういう空間を描く。それがフリマ事業。
           </p>
         </div>
       </FadeInMotion>

@@ -17,7 +17,7 @@ export const Contact = () => {
           <p className={SectionSubTitle}>コンタクト</p>
         </div>
         <div className={contactButton}>
-          <Link href={'/#Contact'}>お問い合わせはこちらから</Link>
+          <Link href={'https://docs.google.com/forms/d/e/1FAIpQLSfMfRP9VqnOMquP9MzbKgwjrTQdtKA3LyuUnrgPIHUcNH4SoA/viewform?pli=1'}>お問い合わせはこちらから</Link>
         </div>
       </div>
     </section>

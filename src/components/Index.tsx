@@ -12,12 +12,12 @@ export const Index = () => {
           </p>
         </FadeInMotion>
         <FadeInMotion delay={1}>
-          <p className={subTitle}>新しい技術を創り出し、産業を越境するAIベンチャー</p>
+          <p className={subTitle}>自らのActionによって、自らの未来を開拓するアーティスト集団</p>
         </FadeInMotion>
       </div>
       <div className={ScrollContainer}>
         <div className={type}>
-          <Link href='/#Mission'>Scroll</Link>
+          <Link href='/#Vision'>Scroll</Link>
         </div>
       </div>
     </section>

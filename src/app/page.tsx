@@ -4,7 +4,7 @@ import { css } from '@kuma-ui/core'
 import { Header } from '@/components/Header'
 import bgImage from '../../public/bg.png'
 import { Index } from '@/components/Index'
-import { Mission } from '@/components/Mission'
+import { Vision } from '@/components/Vision'
 import { Service } from '@/components/Service'
 import { Alex } from '@/components/Alex'
 import { About } from '@/components/About'
@@ -48,7 +48,7 @@ export default function Home() {
       <Header />
       <div className={container}>
         <Index />
-        <Mission />
+        <Vision />
         <Service />
         <Alex />
         <About />
