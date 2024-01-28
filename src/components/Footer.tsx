@@ -5,7 +5,7 @@ export const Footer = () => {
     <footer className={footer}>
       <div className={footerInner}>
         <div className={FooterTitleCotainer}>
-          <p className={FooterTitle}>Alex</p>
+          <p className={FooterTitle}>AleX</p>
           <p className={FooterSubTitle}>
             挑戦したい人が<br></br>挑戦できる世界をつくる
           </p>

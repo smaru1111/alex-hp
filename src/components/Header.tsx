@@ -12,7 +12,7 @@ export const Header = () => {
       <FadeInMotion offscreenVariant={{ y: '-100%' }} onscreenVariant={{ y: '0' }}>
         <header className={scrolled ? headerScrolled : header}>
           <Link href='/' className={title}>
-            Alex
+            AleX
           </Link>
           <div className={nav}>
             <Link href={'/#Vision'}>Vision</Link>

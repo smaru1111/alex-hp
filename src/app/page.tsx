@@ -6,7 +6,7 @@ import bgImage from '../../public/bg.png'
 import { Index } from '@/components/Index'
 import { Vision } from '@/components/Vision'
 import { Service } from '@/components/Service'
-import { Alex } from '@/components/Alex'
+import { AleX } from '@/components/AleX'
 import { About } from '@/components/About'
 import { Contact } from '@/components/Contact'
 import { Footer } from '@/components/Footer'
@@ -50,7 +50,7 @@ export default function Home() {
         <Index />
         <Vision />
         <Service />
-        <Alex />
+        <AleX />
         <About />
         <Contact />
         <Footer />

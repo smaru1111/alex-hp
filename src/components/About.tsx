@@ -28,7 +28,7 @@ export const About = () => {
               <p>メンバー</p>
             </div>
             <div className={AboutGridItem}>
-              <p>Alex</p>
+              <p>AleX</p>
               <p>佐賀大学</p>
               <p>2023年11月8日</p>
               <p>フリマ事業</p>

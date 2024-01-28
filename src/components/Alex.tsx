@@ -2,13 +2,13 @@
 import { css } from '@kuma-ui/core'
 import { FadeInMotion } from './motion/FadeInMotion'
 
-export const Alex = () => {
+export const AleX = () => {
   return (
     <section className={alex}>
       <FadeInMotion className={alexContainer}>
-        <p className={title}>What is Alex?</p>
+        <p className={title}>What is AleX?</p>
         <p className={text}>
-          私たちが目指す最終的なサービスがAlexです挑戦したい人が行動したいと思った瞬間に行動するための全て（資金、人脈、知識など）を兼ね備えた総合プラットフォーム
+          私たちが目指す最終的なサービスがAleXです挑戦したい人が行動したいと思った瞬間に行動するための全て（資金、人脈、知識など）を兼ね備えた総合プラットフォーム
           <br></br>
           誰でも無料で使えるオープンソース型のプラットフォーム<br></br>
           Web3、ブロックチェーンを駆使した自立分散型のプラットフォーム<br></br>
